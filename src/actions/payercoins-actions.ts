@@ -4,7 +4,7 @@ export const callPayercoinsPop = (PayercoinsArgs: any): void => {
     // @ts-ignore
     window.Payercoins &&
     // @ts-ignore
-    window.Payercoins({
+    new window.Payercoins({
       key: PayercoinsArgs.key,
       currency: PayercoinsArgs.currency,
       amount: PayercoinsArgs.amount,

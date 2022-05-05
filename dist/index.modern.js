@@ -66,27 +66,26 @@ var callPayercoinsPop = function callPayercoinsPop(PayercoinsArgs) {
   });
 };
 
-function usePayercoinsPayment(options) {
+function usePayercoinsPayment() {
   var _useScript = usePayercoinsScript(),
       scriptLoaded = _useScript[0],
       scriptError = _useScript[1];
 
-  var key = options.key,
-      currency = options.currency,
-      amount = options.amount,
-      customer_name = options.customer_name,
-      customer_email = options.customer_email,
-      description = options.description,
-      redirect_url = options.redirect_url,
-      callback_url = options.callback_url;
-
-  function initializePayment() {
+  function initializePayment(options) {
     if (scriptError) {
       throw new Error('Unable to load Payercoins inline script');
     }
 
     if (scriptLoaded) {
-      var PayercoinsArgs = {
+      var key = options.key,
+          currency = options.currency,
+          amount = options.amount,
+          customer_name = options.customer_name,
+          customer_email = options.customer_email,
+          description = options.description,
+          redirect_url = options.redirect_url,
+          callback_url = options.callback_url;
+      callPayercoinsPop({
         key: key,
         currency: currency,
         amount: amount,
@@ -95,8 +94,7 @@ function usePayercoinsPayment(options) {
         description: description,
         redirect_url: redirect_url,
         callback_url: callback_url
-      };
-      callPayercoinsPop(PayercoinsArgs);
+      });
     }
   }
 
