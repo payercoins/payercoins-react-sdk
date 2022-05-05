@@ -4,26 +4,17 @@ import { PaymentProps } from './@types/index'
 import useScript from './script'
 import { callPayercoinsPop } from './actions/payercoins-actions'
 
-export default function usePayercoinsPayment(options: PaymentProps) {
-  const [scriptLoaded, scriptError] = useScript()
-  const {
-    key,
-    currency,
-    amount,
-    customer_name,
-    customer_email,
-    description,
-    redirect_url,
-    callback_url
-  } = options
 
-  function initializePayment(): void {
+export default function usePayercoinsPayment() {
+  const [scriptLoaded, scriptError] = useScript()
+
+  function initializePayment(options: PaymentProps): void {
     if (scriptError) {
       throw new Error('Unable to load Payercoins inline script')
     }
 
     if (scriptLoaded) {
-      const PayercoinsArgs = {
+      const {
         key,
         currency,
         amount,
@@ -32,8 +23,17 @@ export default function usePayercoinsPayment(options: PaymentProps) {
         description,
         redirect_url,
         callback_url
-      }
-      callPayercoinsPop(PayercoinsArgs)
+      } = options
+      callPayercoinsPop({
+        key,
+        currency,
+        amount,
+        customer_name,
+        customer_email,
+        description,
+        redirect_url,
+        callback_url
+      })
     }
   }
 

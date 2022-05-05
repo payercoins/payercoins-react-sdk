@@ -82,7 +82,7 @@ function usePayercoinsPayment(options) {
 
   function initializePayment() {
     if (scriptError) {
-      throw new Error('Unable to load Lazerpay inline script');
+      throw new Error('Unable to load Payercoins inline script');
     }
 
     if (scriptLoaded) {
@@ -105,7 +105,7 @@ function usePayercoinsPayment(options) {
       throw new Error('Unable to load payercoins inline script');
     }
   }, [scriptError]);
-  return initializePayment;
+  return [scriptLoaded, scriptError, initializePayment];
 }
 
 exports.usePayercoins = usePayercoinsPayment;

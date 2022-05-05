@@ -39,12 +39,16 @@ const App = () => {
   callback_url: 'https://sandbox-api.payercoins.com/api/v1/withdrawal' //This is just a test sandbox
   }
 
-  const handlePayment = usePayercoins(config)
+  const [scriptLoaded,scriptError, initializePayment] = usePayercoins()
+
+  const handlePayment = () => {
+    initializePayment(config)
+  }
 
   return (
     <div>
       <h1>Payercoins React test App</h1>
-      <button onClick={handlePayment}>Pay with Payercoins</button>
+      <button onClick={scriptLoaded && handlePayment}>Pay with Payercoins</button>
     </div>
   )
 }
