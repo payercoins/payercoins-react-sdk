@@ -1,10 +1,17 @@
 {
   "name": "payercoins-react",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Official React package for Payercoins",
-  "author": "unkletayo",
+  "author": "Adetayo Akinsanya <akinsanyaadetayo@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/Grazac-Project/payercoins-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Grazac-Project/payercoins-react"
+  },
+  "bugs": {
+    "url": "https://github.com/Grazac-Project/Grazac-Project/payercoins-react/issues"
+  },
+  "homepage": "https://github.com/Grazac-Project/Grazac-Project/payercoins-react#readme",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.ts",
