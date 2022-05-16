@@ -42,6 +42,7 @@ const App = () => {
   const [initializePayment] = usePayercoins();
 
 
+
   const handlePayment = async () => {
     await initializePayment(options);
   };
@@ -54,6 +55,7 @@ const App = () => {
   );
 }
 ```
+
 
 ## License
 
