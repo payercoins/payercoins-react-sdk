@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePayercoins } from './dist/index';
+import { usePayercoins } from 'payercoins-react';
 
 const App = () => {
   const options = {
@@ -8,7 +8,7 @@ const App = () => {
     currency: 'ethereum', // optional, if not provided will use your default currencies activated in your account
     amount: parseFloat('20.00'),
     customer_name: 'Test User',
-    customer_email: 'adetayo.akinsanya@grazac.com.ng',
+    customer_email: 'testuser@grazac.com.ng',
     description: 'Test Payment', // optional
     redirect_url: '', // optional - will default to current page
     invoice_id: (new Date().getTime() * Math.random()).toString(), // optional - unique reference for your payment and minLenght 8, else we will automatically generate one
