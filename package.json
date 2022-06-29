@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Grazac-Project/payercoins-react"
+    "url": "https://github.com/payercoins/payercoins-react-sdk"
   },
   "bugs": {
-    "url": "https://github.com/Grazac-Project/Grazac-Project/payercoins-react/issues"
+    "url": "https://github.com/payercoins/payercoins-react-sdk/issues"
   },
-  "homepage": "https://github.com/Grazac-Project/Grazac-Project/payercoins-react#readme",
+  "homepage": "https://github.com/payercoins/payercoins-react-sdk#readme",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.ts",

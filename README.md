@@ -28,11 +28,11 @@ import { usePayercoins } from 'payercoins-react'
 
 const App = () => {
   config = {
-  key: 'PUBLIC_KEY',
-  customer_name: "CUSTOMERS NAME",
-  customer_email: "CUSTOMERS EMAIL",
+  key: 'PUBLIC_KEY', //string
+  customer_name: "CUSTOMERS NAME", //string
+  customer_email: "CUSTOMERS EMAIL", //string
   amount:  parseFloat('20.00'),  // amount as a number or string
-  currency: 'ethereum', // ethereum, bitcoin, usdt-eth.  optional, if not provided will use your default currencies activated in your account
+  currency: ['ethereum'], // Array of currency slug.   
   description: 'Test Payment', // optional
   redirect_url: '', // optional - will default to current page
   invoice_id: "239313200190.40646", // optional - unique identifier for your payment and minLength 8, else we will automatically generate one
@@ -87,8 +87,14 @@ The customers email
 
 ### <a name="currency"></a> `currency`
 
-**string: Required**
-The name of the coin, which has to be part of the coins the merchant accepts
+**[string]: Required**
+The currency has to be filed an array of strings of a users enabled coins
+example 
+
+```
+["ethereum", "bitcoin",  "usdt-trx",  "usdt-bep",  "busd-bep","usdc-bep"]
+```
+
 
 ### <a name="amount"></a> `amount`
 
@@ -111,7 +117,7 @@ unique identifier for your payment
 The page where you want the customer to be directed to after payment, if not user will be directed to the current page
 ### <a name="callback_url"></a> `callback_url`
 
-**string: Optional**
+**string: Required**
 
 
 <!-- ```ts

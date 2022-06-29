@@ -2,7 +2,7 @@ export const callPayercoinsPop = async (PayercoinsArgs: any) => {
 
   const payercoins = new window.Payercoins({
     key: PayercoinsArgs.key,
-    currency: PayercoinsArgs.currency,
+    currency: PayercoinsArgs.currency.toString(),
     amount: PayercoinsArgs.amount,
     customer_name: PayercoinsArgs['customer_name'],
     customer_email: PayercoinsArgs['customer_email'],
